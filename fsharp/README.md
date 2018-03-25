@@ -16,8 +16,9 @@ WARNING:
 
 # Supported tags and respective `Dockerfile` links
 
--	[`latest`, `4`, `4.1`, `4.1.34` (*4.1.34/mono/Dockerfile*)](https://github.com/fsprojects/docker-fsharp/blob/f1c1a562118cee0f0f9b31890b5f099b37e72284/4.1.34/mono/Dockerfile)
--	[`4.0`, `4.0.1`, `4.0.1.1` (*4.0.1.1/Dockerfile*)](https://github.com/fsprojects/docker-fsharp/blob/f1c1a562118cee0f0f9b31890b5f099b37e72284/4.0.1.1/Dockerfile)
+**No supported tags found!**
+
+It is very likely that `fsharp` does not support the currently selected architecture (`arm32v7`).
 
 # Quick reference
 
@@ -62,7 +63,7 @@ F# (pronounced F sharp) is a strongly typed, multi-paradigm programming language
 The most straightforward way to use this image is to use it both as the build and runtime environment. In your `Dockerfile`, you can write something similar to the following:
 
 ```dockerfile
-FROM fsharp
+FROM arm32v7/fsharp
 COPY . /app
 RUN xbuild /app/myproject.sln
 ```
