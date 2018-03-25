@@ -16,10 +16,12 @@ WARNING:
 
 # Supported tags and respective `Dockerfile` links
 
--	[`17.10`, `artful-20180227`, `artful`, `rolling` (*artful/Dockerfile*)](https://github.com/tianon/docker-brew-ubuntu-core/blob/46511cf49ad5d2628f3e8d88e1f8b18699a3ad8f/artful/Dockerfile)
--	[`18.04`, `bionic-20180224`, `bionic`, `devel` (*bionic/Dockerfile*)](https://github.com/tianon/docker-brew-ubuntu-core/blob/46511cf49ad5d2628f3e8d88e1f8b18699a3ad8f/bionic/Dockerfile)
--	[`14.04`, `trusty-20180302`, `trusty` (*trusty/Dockerfile*)](https://github.com/tianon/docker-brew-ubuntu-core/blob/46511cf49ad5d2628f3e8d88e1f8b18699a3ad8f/trusty/Dockerfile)
--	[`16.04`, `xenial-20180228`, `xenial`, `latest` (*xenial/Dockerfile*)](https://github.com/tianon/docker-brew-ubuntu-core/blob/46511cf49ad5d2628f3e8d88e1f8b18699a3ad8f/xenial/Dockerfile)
+-	[`17.10`, `artful-20180227`, `artful`, `rolling` (*artful/Dockerfile*)](https://github.com/tianon/docker-brew-ubuntu-core/blob/e231c43be7c49ac3ca8c1f45e25dcaeeff1e69dc/artful/Dockerfile)
+-	[`18.04`, `bionic-20180224`, `bionic`, `devel` (*bionic/Dockerfile*)](https://github.com/tianon/docker-brew-ubuntu-core/blob/e231c43be7c49ac3ca8c1f45e25dcaeeff1e69dc/bionic/Dockerfile)
+-	[`14.04`, `trusty-20180302`, `trusty` (*trusty/Dockerfile*)](https://github.com/tianon/docker-brew-ubuntu-core/blob/e231c43be7c49ac3ca8c1f45e25dcaeeff1e69dc/trusty/Dockerfile)
+-	[`16.04`, `xenial-20180228`, `xenial`, `latest` (*xenial/Dockerfile*)](https://github.com/tianon/docker-brew-ubuntu-core/blob/e231c43be7c49ac3ca8c1f45e25dcaeeff1e69dc/xenial/Dockerfile)
+
+[![Build Status](https://doi-janky.infosiftr.net/job/multiarch/job/ppc64le/job/ubuntu/badge/icon) (`ppc64le/ubuntu` build job)](https://doi-janky.infosiftr.net/job/multiarch/job/ppc64le/job/ubuntu/)
 
 # Quick reference
 
@@ -63,9 +65,9 @@ Development of Ubuntu is led by UK-based Canonical Ltd., a company owned by Sout
 
 This image is built from official rootfs tarballs provided by Canonical (specifically, https://partner-images.canonical.com/core/).
 
-The `ubuntu:latest` tag points to the "latest LTS", since that's the version recommended for general use. The `ubuntu:rolling` tag points to the latest release (regardless of LTS status).
+The `ppc64le/ubuntu:latest` tag points to the "latest LTS", since that's the version recommended for general use. The `ppc64le/ubuntu:rolling` tag points to the latest release (regardless of LTS status).
 
-Along a similar vein, the `ubuntu:devel` tag is an alias for whichever release the "devel" suite on the mirrors currently points to, as determined by the following one-liner: `wget -qO- http://archive.ubuntu.com/ubuntu/dists/devel/Release | awk -F ': ' '$1 == "Codename" { print $2; exit }'`
+Along a similar vein, the `ppc64le/ubuntu:devel` tag is an alias for whichever release the "devel" suite on the mirrors currently points to, as determined by the following one-liner: `wget -qO- http://archive.ubuntu.com/ubuntu/dists/devel/Release | awk -F ': ' '$1 == "Codename" { print $2; exit }'`
 
 ## Locales
 
@@ -81,10 +83,10 @@ ENV LANG en_US.utf8
 
 ## `/etc/apt/sources.list`
 
-### `ubuntu:16.04`
+### `ppc64le/ubuntu:16.04`
 
 ```console
-$ docker run ubuntu:16.04 grep -v '^#' /etc/apt/sources.list
+$ docker run ppc64le/ubuntu:16.04 grep -v '^#' /etc/apt/sources.list
 
 deb http://archive.ubuntu.com/ubuntu/ xenial main restricted
 deb-src http://archive.ubuntu.com/ubuntu/ xenial main restricted
@@ -104,10 +106,10 @@ deb http://archive.ubuntu.com/ubuntu/ xenial-security universe
 deb-src http://archive.ubuntu.com/ubuntu/ xenial-security universe
 ```
 
-### `ubuntu:14.04`
+### `ppc64le/ubuntu:14.04`
 
 ```console
-$ docker run ubuntu:14.04 grep -v '^#' /etc/apt/sources.list
+$ docker run ppc64le/ubuntu:14.04 grep -v '^#' /etc/apt/sources.list
 
 deb http://archive.ubuntu.com/ubuntu/ trusty main restricted
 deb-src http://archive.ubuntu.com/ubuntu/ trusty main restricted
